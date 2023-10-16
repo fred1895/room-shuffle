@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            margin: 0;        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h4 {
+            margin: 10px 0 10px 0;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            padding: 5px 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+        }
+
+        .quarto {
+            margin-bottom: 20px;
+        }
+
+        input[disabled] {
+            background-color: #eee;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+            }
+
+            li {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        /* Extra styles */
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        h4 {
+            color: #333;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        input {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .quarto {
+            background-color: #ccc;
+        }
+
+        .buttonshuffle {
+            background-color: #eee;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="button" onclick="shuffleAndInputElements()" value="Sortear" class="buttonshuffle">
+        <h3>Quarto 1 - Ar condicionado</h3>
+            <div class="quarto">
+                <input type="text" class="nome" placeholder="Casal 1" id="fstRoom" disabled>
+                <input type="text" class="nome" placeholder="Casal 2" id="fstRoom2" disabled>
+            </div>
+            <h3>Quarto 2 - Ar condicionado</h3>
+                <div class="quarto">
+                    <input type="text" class="nome" placeholder="Casal" id="scndRoom" disabled>
+                    <input type="text" class="nome" value="Maycon" disabled>
+                </div>
+                <h3>Quarto 3 - Ar condicionado</h3>
+                    <div class="quarto">
+                        <input type="text" class="nome" placeholder="Casal" id="thrRoom" disabled>
+                    </div>
+                    <h3>Quarto 4 - Ventilador</h3>
+                        <div class="quarto">
+                            <input type="text" class="nome" placeholder="Casal" id="fourthRoom" disabled>
+                        </div>
+                        <h3>Quarto 5 - Ventilador</h3>
+                            <div class="quarto">
+                                <input type="text" class="nome" placeholder="Casal" id="fifthRoom" disabled>
+                            </div>
+                            <h3>Quarto 6 - Ventilador</h3>
+                                <div class="quarto">
+                                    <input type="text" class="nome" placeholder="Casal" id="sixthRoom" disabled>
+                                </div>
+                                <h4>Casais</h4>
+                                <ul id="namesList">
+                                    <li>Ana Julia e Thiago</li>
+                                    <li>Arthur e Carol</li>
+                                    <li>Fred e Camila</li>
+                                    <li>Bruno e Amanda</li>
+                                    <li>Yuri e Jully</li>
+                                    <li>Jessica e Kelvin</li>
+                                    <li>Matheus e Gabi</li>
+                                </ul>
+    </div>
+</body>
+
+<script>
+    const names = ["Ana Julia e Thiago", "Arthur e Carol", "Fred e Camila", "Bruno e Amanda", "Yuri e Jully", "Jessica e Kelvin", "Matheus e Gabi"];
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function shuffleFourtimes(array) {
+        for (var i = 0; i < 4; i++) {
+            shuffleArray(array);
+        }
+    }
+
+    function shuffleAndInputElements() {
+        shuffleFourtimes(names);
+        const first = document.getElementById("fstRoom")
+        first.value = names[0]
+        const second = document.getElementById("scndRoom")
+        second.value = names[1]
+        const third = document.getElementById("thrRoom")
+        third.value = names[2]
+        const fourth = document.getElementById("fourthRoom")
+        fourth.value = names[3]
+        const fifth = document.getElementById("fifthRoom")
+        fifth.value = names[4]
+        const sixth = document.getElementById("sixthRoom")
+        sixth.value = names[5]
+        const fstRoom2 = document.getElementById("fstRoom2")
+        fstRoom2.value = names[6]
+    }
+</script>
+
+</html>
