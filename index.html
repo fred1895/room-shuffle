@@ -8,7 +8,8 @@
         body {
             font-family: sans-serif;
             font-size: 16px;
-            margin: 10;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .container {
@@ -29,6 +30,7 @@
         li {
             display: inline-block;
             padding: 5px 15px;
+            max-width: 100%;
         }
 
         input {
@@ -45,8 +47,40 @@
             background-color: #eee;
         }
 
+        /* Extra styles */
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        h4 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        input {
+            background-color: #fff;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .quarto {
+            background-color: #ccc;
+        }
+
+        .buttonshuffle {
+            background-color: #eee;
+            color: #333;
+        }
+
         /* Responsive styles */
-        @media (max-width: 768px) {
+        @media only screen and (max-width: 786px) {
             .container {
                 max-width: 100%;
             }
@@ -63,41 +97,13 @@
 
             h3 {
                 font-size: 30px;
+                background-color: red;
             }
 
             h4 {
                 font-size: 28px;
+                background-color: red;
             }
-        }
-
-        /* Extra styles */
-
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-        }
-
-        h4 {
-            color: #333;
-        }
-
-        h3 {
-            color: #333;
-        }
-
-        input {
-            background-color: #fff;
-            color: #333;
-            font-size: large;
-        }
-
-        .quarto {
-            background-color: #ccc;
-        }
-
-        .buttonshuffle {
-            background-color: #eee;
-            color: #333;
         }
     </style>
 </head>
